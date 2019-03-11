@@ -4,7 +4,9 @@ RESET=$(tput sgr0)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
-export PS1="\[$BLUE\]\u\[$RESET\]@\[$YELLOW\]\H \[$GREEN\]\w \[$RESET\]\$ "
+
+PROMPT_DIRTRIM=3
+export PS1="\[$BLUE\]\u\[$RESET\]@\[$YELLOW\]\H \[$GREEN\]\w \[$RESET\]\\$ "
 
 # --- Path ---
 
@@ -29,9 +31,9 @@ ssh() {
 
 sudo() {
     if [[ $TERM == 'xterm-kitty' ]]; then
-        sudo TERMINFO=/Applications/kitty.app/Contents/Frameworks/kitty/terminfo $@
+        $(which sudo) TERMINFO=/Applications/kitty.app/Contents/Frameworks/kitty/terminfo $@
     else
-        sudo $@
+        $(which sudo) $@
     fi
 }
 
