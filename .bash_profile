@@ -4,8 +4,7 @@ RESET=$(tput sgr0)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
-WHITE=$(tput setaf 7)
-export PS1="$BLUE\u$WHITE@$YELLOW\H $GREEN\w $RESET\$ "
+export PS1="\[$BLUE\]\u\[$RESET\]@\[$YELLOW\]\H \[$GREEN\]\w \[$RESET\]\$ "
 
 # --- Path ---
 
