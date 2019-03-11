@@ -7,6 +7,10 @@ BLUE=$(tput setaf 4)
 WHITE=$(tput setaf 7)
 export PS1="$BLUE\u$WHITE@$YELLOW\H $GREEN\w $RESET\$ "
 
+# --- Path ---
+
+export PATH=$HOME/.local/bin:$PATH
+
 # --- Default Editor ---
 
 export EDITOR=/usr/bin/nano
