@@ -4,22 +4,22 @@ RESET=$(tput sgr0)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
+TSL=$(tput tsl)
+FSL=$(tput fsl)
 
 PROMPT_DIRTRIM=3
-export PS1="\[$BLUE\]\u\[$RESET\]@\[$YELLOW\]\H \[$GREEN\]\w \[$RESET\]\\$ "
+export PS1="\[$TSL\W$FSL\]\[$BLUE\]\u\[$RESET\]@\[$YELLOW\]\H \[$GREEN\]\w \[$RESET\]\\$ "
 
-# --- Path ---
+# --- Environment ---
 
 export PATH=$HOME/.local/bin:$PATH
-
-# --- Default Editor ---
 
 export EDITOR=/usr/bin/nano
 
 # --- Aliases ---
 
 alias mkdir='mkdir -p'
-alias ls='gls -AFGh --color=auto --group-directories-first'
+alias ls='gls -AFGhv --color=auto --group-directories-first'
 
 ssh() {
     if [[ $TERM == 'xterm-kitty' ]]; then
